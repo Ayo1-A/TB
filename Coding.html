@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trummy Bright App</title>
+  <style>
+    /* Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .scrolling-text-container {
+      width: 100%;
+      background-color: #343a40;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+    
+    .scrolling-text {
+      display: inline-block;
+      position: relative;
+      animation: scroll 50s linear infinite, blink 2s linear infinite, gradient 10s linear infinite;
+    }
+    
+    .welcome-text {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      animation: welcome 6s linear;
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    @keyframes blink {
+      0% {
+        color: red;
+      }
+      25% {
+        color: blue;
+      }
+      50% {
+        color: green;
+      }
+      75% {
+        color: yellow;
+      }
+      100% {
+        color: white;
+      }
+    }
+    
+    @keyframes gradient {
+      0% {
+        text-shadow: 0 0 10px red;
+      }
+      25% {
+        text-shadow: 0 0 10px blue;
+      }
+      50% {
+        text-shadow: 0 0 10px green;
+      }
+      75% {
+        text-shadow: 0 0 10px yellow;
+      }
+      100% {
+        text-shadow: 0 0 10px white;
+      }
+    }
+    
+    @keyframes welcome {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0;
+        color: red;
+      }
+      40% {
+        opacity: 1;
+        color: blue;
+      }
+      60% {
+        opacity: 0;
+        color: green;
+      }
+      80% {
+        opacity: 1;
+        color: yellow;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Scrolling Text Container -->
+  <div class="scrolling-text-container">
+    <!-- Welcome Text -->
+    <div class="welcome-text">Welcome to Trummy Bright App!</div>
+    <!-- Scrolling Text -->
+    <div class="scrolling-text">
+      Discover the ultimate coding experience! Test HTML, CSS, Java, and more. Contact us: trummybright@gmail.com. Stay tuned for updates!
+    </div>
+  </div>
+  </html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Post-it Notes</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #b3d9ff;
+        }
+        #note-form {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #4CAF50;
+        }
+        #name-input, #text-input, #color-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        #text-input {
+            height: 80px;
+            resize: none;
+        }
+        #color-input {
+            border: none;
+        }
+        #post-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        #post-btn:hover {
+            background-color: #45a049;
+        }
+        .posted-notes {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .post-it-note {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .note-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .action-btn {
+            font-size: 14px;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .delete-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        .edit-btn {
+            background-color: #4d79ff;
+            color: white;
+        }
+        .copy-btn {
+            background-color: #33cc33;
+            color: white;
+        }
+        .pin-btn {
+            background-color: #ffcc00;
+            color: white;
+        }
+        .note-author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .pinned {
+            border: 2px solid #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <h1> TEST CODE NOTE</h1>
+    <div id="note-form">
+        <input type="text" id="name-input" placeholder="Your Name" required />
+        <textarea id="text-input" placeholder="Write your code here..." rows="4" required></textarea>
+        <label for="color-input">Select Note Color:</label>
+        <input type="color" id="color-input" value="#f8c471" />
+        <button id="post-btn">Post Note</button>
+    </div>
+    <div id="posted-notes" class="posted-notes"></div>
+
+
+    <script>
+        const postedNotesDiv = document.getElementById('posted-notes');
+        const nameInput = document.getElementById('name-input');
+        const textInput = document.getElementById('text-input');
+        const colorInput = document.getElementById('color-input');
+        const postBtn = document.getElementById('post-btn');
+        let postedNotes = [];
+
+        // Load existing notes from local storage
+        if (localStorage.getItem('postedNotes')) {
+            postedNotes = JSON.parse(localStorage.getItem('postedNotes'));
+            renderPostedNotes();
+        }
+
+        postBtn.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            const color = colorInput.value;
+            if (name && text) {
+                const newNote = {
+                    name,
+                    text,
+                    color,
+                    id: Date.now(),
+                    pinned: false
+                };
+                postedNotes.push(newNote);
+                localStorage.setItem('postedNotes', JSON.stringify(postedNotes));
+                renderPostedNotes();
+                nameInput.value = '';
+                textInput.value = '';
+                colorInput.value = '#f8c471';
+            } else {
+                alert("Please enter both your name and the note.");
+            }
+        });
+
+        function renderPostedNotes() {
+            postedNotesDiv.innerHTML = '';
+
+            const sortedNotes = postedNotes.sort((a, b) => b.pinned - a.pinned);
+
+            sortedNotes.forEach((note) => {
+                const noteDiv = document.createElement('div');
+                noteDiv.className = 'post-it-note' + (note.pinned ? ' pinned' : '');
+                noteDiv.style.backgroundColor = note.color;
+
+                noteDiv.innerHTML = `
+                    <div class="note-author">${note.name}</div>
+                    <div>${note.text}</div>
+                    <div class="note-buttons">
+                        <button class="action-btn copy-btn" data-id="${note.id}">Copy</button>
+                        <button class="action-btn edit-btn" data-id="${note.id}">Edit</button>
+                        <button class="action-btn delete-btn" data-id="${note.id}">Delete</button>
+                        <button class="action-btn pin-btn" data-id="${note.id}">${note.pinned ? 'Unpin' : 'Pin'}</button>
+                    </div>
+                `;
+                postedNotesDiv.appendChild(noteDiv);
+            });
+            addEventListeners();
+        }
+
+        function addEventListeners() {
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', deleteNote);
+            });
+            document.querySelectorAll('.edit-btn').forEach(button => {
+                button.addEventListener('click', editNote);
+            });
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', copyNote);
+            });
+            document.querySelectorAll('.pin-btn').forEach(button => {
+                button.addEventListener('click', pinNote);
+            });
+        }
+
+        function deleteNote(event) {
+            const noteId = Number(event.target.getAttribute('data-id'));
+            postedNotes = postedNotes.filter(note => note.id !== noteId);
+            localStorage.setItem('postedNotes', JSON.stringify(postedNotes));
+            renderPostedNotes();
+        }
+
+        function editNote(event) {
+            const noteId = Number(event.target.getAttribute('data-id'));
+            const note = postedNotes.find(note => note.id === noteId);
+            nameInput.value = note.name;
+            textInput.value = note.text;
+            colorInput.value = note.color;
+            deleteNote(event); // Remove note to be edited
+        }
+
+        function copyNote(event) {
+            const noteId = Number(event.target.getAttribute('data-id'));
+            const note = postedNotes.find(note => note.id === noteId);
+            nameInput.value = note.name;
+            textInput.value = note.text;
+            colorInput.value = note.color;
+        }
+
+        function pinNote(event) {
+            const noteId = Number(event.target.getAttribute('data-id'));
+            const note = postedNotes.find(note => note.id === noteId);
+            note.pinned = !note.pinned;
+            localStorage.setItem('postedNotes', JSON.stringify(postedNotes));
+            renderPostedNotes();
+        }
+    </script>
+</body>
+</html>
